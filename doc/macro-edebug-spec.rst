@@ -73,5 +73,17 @@ Example:
       (declare (debug (sexp)))
         `(nth (1- (length ,seq)) ,seq))
 
+Using these macros:
+
+.. code:: elisp
+
+    ELISP> (setq digits '(0 1 2 3 4 5 6 7 8 9 ))
+    (0 1 2 3 4 5 6 7 8 9)
+
+    ELISP> (first-in digits)
+    0 (#o0, #x0, ?\C-@)
+    ELISP> (last-in digits)
+    9 (#o11, #x9, ?\C-i)
+    ELISP>
 
 ..  LocalWords:  Edebug
