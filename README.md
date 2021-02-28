@@ -1,2 +1,2 @@
-# about_emacs
-Notes about the Emacs editor
+# about-Emacs-Lisp
+Notes about the Emacs Lisp
