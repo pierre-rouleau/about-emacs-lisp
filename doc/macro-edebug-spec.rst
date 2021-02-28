@@ -4,7 +4,7 @@ Instrumentation of macro calls
 
 :URL: https://github.com/pierre-rouleau/about-emacs-lisp/blob/master/doc/macro-edebug-spec.rst
 :Project:  `About Emacs Lisp home page`_
-:Last Modified Time-stamp: <2021-02-28 12:17:17, updated by Pierre Rouleau>
+:Last Modified Time-stamp: <2021-02-28 12:18:04, updated by Pierre Rouleau>
 :License:
     Copyright (c) 2021 Pierre Rouleau <prouleau001@gmail.com>
 
@@ -90,53 +90,53 @@ Details:
   Describes a macro argument that is passed unquoted and used unquoted.
 
 
-Example:
+**Example**:
 
-  .. code:: elisp
+.. code:: elisp
 
-      (defmacro first-in (seq)
-        "Return first element of sequence SEQ."
-        (declare (debug (sexp)))
-        `(nth 0 ,seq))
+    (defmacro first-in (seq)
+      "Return first element of sequence SEQ."
+      (declare (debug (sexp)))
+      `(nth 0 ,seq))
 
-      (defmacro last-in (seq)
-        "Return last element of sequence SEQ."
-        (declare (debug (sexp)))
-        `(nth (1- (length ,seq)) ,seq))
+    (defmacro last-in (seq)
+      "Return last element of sequence SEQ."
+      (declare (debug (sexp)))
+      `(nth (1- (length ,seq)) ,seq))
 
-  Using these macros:
+Using these macros:
 
-  .. code:: elisp
+.. code:: elisp
 
-      ELISP> (setq digits '(0 1 2 3 4 5 6 7 8 9 ))
-      (0 1 2 3 4 5 6 7 8 9)
+    ELISP> (setq digits '(0 1 2 3 4 5 6 7 8 9 ))
+    (0 1 2 3 4 5 6 7 8 9)
 
-      ELISP> (first-in digits)
-      0 (#o0, #x0, ?\C-@)
-      ELISP> (last-in digits)
-      9 (#o11, #x9, ?\C-i)
-      ELISP>
+    ELISP> (first-in digits)
+    0 (#o0, #x0, ?\C-@)
+    ELISP> (last-in digits)
+    9 (#o11, #x9, ?\C-i)
+    ELISP>
 
-  Macro expansion in code:
+Macro expansion in code:
 
-  Given the following code:
+Given the following code:
 
-  .. code:: elisp
+.. code:: elisp
 
-      (setq digits '(0 1 2 3 4 5 6 7 8 9))
-      (setq first-digit (first-in digits))
-      (setq last-digit (last-in digits))
+    (setq digits '(0 1 2 3 4 5 6 7 8 9))
+    (setq first-digit (first-in digits))
+    (setq last-digit (last-in digits))
 
-  The in-line macro expansion produces the following code:
+The in-line macro expansion produces the following code:
 
-  .. code:: elisp
+.. code:: elisp
 
-      (setq digits '(0 1 2 3 4 5 6 7 8 9))
-      (setq first-digit (nth 0 digits))
-      (setq last-digit (nth
-                        (1-
-                         (length digits))
-                        digits))
+    (setq digits '(0 1 2 3 4 5 6 7 8 9))
+    (setq first-digit (nth 0 digits))
+    (setq last-digit (nth
+                      (1-
+                       (length digits))
+                      digits))
 
 
 
