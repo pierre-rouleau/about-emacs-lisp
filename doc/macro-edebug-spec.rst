@@ -4,7 +4,7 @@ Instrumentation of macro calls
 
 :URL: https://github.com/pierre-rouleau/about-emacs-lisp/blob/master/doc/macro-edebug-spec.rst
 :Project:  `About Emacs Lisp home page`_
-:Last Modified Time-stamp: <2021-02-28 12:18:04, updated by Pierre Rouleau>
+:Last Modified Time-stamp: <2021-02-28 12:34:31, updated by Pierre Rouleau>
 :License:
     Copyright (c) 2021 Pierre Rouleau <prouleau001@gmail.com>
 
@@ -87,7 +87,8 @@ Description:
   A single un-evaluated Lisp object, which is not instrumented.
 
 Details:
-  Describes a macro argument that is passed unquoted and used unquoted.
+  Describes a macro argument that is passed unquoted.
+  Inside the macro, it may be used quoted or unquoted.
 
 
 **Example**:
