@@ -4,7 +4,7 @@ Instrumentation of macro calls
 
 :URL: https://github.com/pierre-rouleau/about-emacs-lisp/blob/master/doc/macro-edebug-spec.rst
 :Project:  `About Emacs Lisp home page`_
-:Last Modified Time-stamp: <2021-02-28 12:34:31, updated by Pierre Rouleau>
+:Last Modified Time-stamp: <2021-02-28 14:01:45, updated by Pierre Rouleau>
 :License:
     Copyright (c) 2021 Pierre Rouleau <prouleau001@gmail.com>
 
@@ -89,6 +89,9 @@ Description:
 Details:
   Describes a macro argument that is passed unquoted.
   Inside the macro, it may be used quoted or unquoted.
+  It may be a single symbol but also a Lisp object like a list of objects
+  that may constitute a parameter list of a lambda.
+  See the ``gv-letplace`` macro for an example of this.
 
 
 **Example**:
@@ -138,6 +141,27 @@ The in-line macro expansion produces the following code:
                       (1-
                        (length digits))
                       digits))
+
+Another example: ``flip-args``:
+
+.. code:: elisp
+
+    (defmacro flip-args (fun arg1 arg2)
+      "Calls function FUN, passing ARG2 before ARG1."
+      (declare (debug (sexp body)))
+      `(,fun ,arg2 ,arg1))
+
+where:
+
+.. code:: elisp
+
+    (flip-args / 4 36)
+
+expands to:
+
+.. code:: elisp
+
+    (/ 36 4)
 
 
 
