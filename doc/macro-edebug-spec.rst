@@ -4,7 +4,7 @@ Instrumentation of macro calls
 
 :URL: https://github.com/pierre-rouleau/about-emacs-lisp/blob/master/doc/macro-edebug-spec.rst
 :Project:  `About Emacs Lisp home page`_
-:Last Modified Time-stamp: <2021-02-28 14:01:45, updated by Pierre Rouleau>
+:Modified: 2021-02-28 15:31:50, updated by Pierre Rouleau.
 :License:
     Copyright (c) 2021 Pierre Rouleau <prouleau001@gmail.com>
 
@@ -165,4 +165,10 @@ expands to:
 
 
 
-..  LocalWords:  Edebug
+
+    ..
+
+       Local Variables:
+       time-stamp-start: "^:Modified:[ \t]+\\\\?"
+       time-stamp-end:   "\\.$"
+       End:
