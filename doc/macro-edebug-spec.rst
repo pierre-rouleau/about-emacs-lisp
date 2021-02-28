@@ -71,7 +71,7 @@ Example:
     (defmacro last-in (seq)
       "Return last element of sequence SEQ."
       (declare (debug (sexp)))
-        `(nth (1- (length ,seq)) ,seq))
+      `(nth (1- (length ,seq)) ,seq))
 
 Using these macros:
 
@@ -85,5 +85,28 @@ Using these macros:
     ELISP> (last-in digits)
     9 (#o11, #x9, ?\C-i)
     ELISP>
+
+Macro expansion in code:
+
+Given the following code:
+
+.. code:: elisp
+
+    (setq digits '(0 1 2 3 4 5 6 7 8 9))
+    (setq first-digit (first-in digits))
+    (setq last-digit (last-in digits))
+
+The in-line macro expansion produces the following code:
+
+.. code:: elisp
+
+    (setq digits '(0 1 2 3 4 5 6 7 8 9))
+    (setq first-digit (nth 0 digits))
+    (setq last-digit (nth
+                      (1-
+                       (length digits))
+                      digits))
+
+
 
 ..  LocalWords:  Edebug
