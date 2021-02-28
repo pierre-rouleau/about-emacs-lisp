@@ -48,9 +48,30 @@ As described in the Emacs Lisp manual::
   of the sublist or group they are contained in.
 
 
-sexp:
-     A single unevaluated Lisp object, which is not instrumented.
 
+sexp
+~~~~
+
+Description:
+  A single un-evaluated Lisp object, which is not instrumented.
+
+Details:
+  Describes a macro argument that is passed unquoted and used unquoted.
+
+
+Example:
+
+.. code:: elisp
+
+    (defmacro first-in (seq)
+      "Return first element of sequence SEQ."
+      (declare (debug (sexp)))
+      `(nth 0 ,seq))
+
+    (defmacro last-in (seq)
+      "Return last element of sequence SEQ."
+      (declare (debug (sexp)))
+        `(nth (1- (length ,seq)) ,seq))
 
 
 ..  LocalWords:  Edebug
