@@ -2,6 +2,30 @@
 Instrumentation of macro calls
 ==============================
 
+:URL: https://github.com/pierre-rouleau/about-emacs-lisp/blob/master/doc/macro-edebug-spec.rst
+:Project:  `About Emacs Lisp home page`_
+:Last Modified Time-stamp: <2021-02-28 12:13:51, updated by Pierre Rouleau>
+:License:
+    Copyright (c) 2021 Pierre Rouleau <prouleau001@gmail.com>
+
+
+    You can redistribute this document and/or modify it under the terms of the GNU
+    General Public License as published by the Free Software Foundation, either
+    version 3 of the License, or (at your option) any later version.
+
+
+    This document is distributed in the hope that it will be useful, but WITHOUT ANY
+    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+    PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+
+
+.. _About Emacs Lisp home page:  https://github.com/pierre-rouleau/about-emacs-lisp
+
+
+.. contents::  **Table Of Contents**
+.. sectnum::
+
 
 Macro def-edebug-spec macro specifications
 ==========================================
@@ -32,7 +56,7 @@ Argument        Description
 Specification List
 ------------------
 
-As described in the Emacs Lisp manual::
+As described in the `section titled Instrumenting Macro Calls in the Emacs Lisp manual`_::
 
   A “specification list” is required for an Edebug specification if some
   arguments of a macro call are evaluated while others are not.  Some
@@ -46,6 +70,13 @@ As described in the Emacs Lisp manual::
   Sublists and groups thus subdivide the specification list into a
   hierarchy of levels.  Specification keywords apply only to the remainder
   of the sublist or group they are contained in.
+
+
+
+.. _section titled Instrumenting Macro Calls in the Emacs Lisp manual: https://www.gnu.org/software/emacs/manual/html_node/elisp/Instrumenting-Macro-Calls.html#Instrumenting-Macro-Calls
+
+I expanded the information from the manual to include examples for several of
+the possible symbols described in the manual.  Each one has it's own section.
 
 
 
